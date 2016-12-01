@@ -24,9 +24,11 @@ This will generate the following:
 import DocumentService from 'ember-disable-document-write/services/document';
 
 export default DocumentService.extend({
+    /*
     init() {
         this._super(...arguments);
     },
+    */
     write(/* content */) {
         // insert any functionality to be executed when document.write is called
         // you can log, report, or use a "safe" write option like `Node.insertBefore` or `document.appendChild`

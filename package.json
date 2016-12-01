@@ -1,7 +1,7 @@
 {
   "name": "ember-disable-document-write",
   "version": "0.1.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Disables or reassigns document.write to prevent a blank page.",
   "directories": {
     "doc": "doc",
     "test": "tests"
