@@ -4,7 +4,7 @@
 ## Why disable document.write?
 Have you ever had users of your Ember app complain about your site going completely blank for no apparent reason? You and your customers are probably experiencing an unwanted side effect from third party code trying to insert a script into your page using `document.write()`.
 
-Calling `document.write()` on a page with an Ember app has the unfortunate side effect of completely replacing the content of your page with whatever is passed as an argument, [effectively blanking out your page](http://stackoverflow.com/questions/10873942/document-write-clears-page). This is because `document.write()` will call `document.open()` on an already loaded document [(see notes section here)](https://developer.mozilla.org/en-US/docs/Web/API/Document/write).
+Calling `document.write()` on a page with an Ember app has the unfortunate side effect of completely replacing the content of your page with whatever is passed as an argument, [effectively blanking out your page](http://stackoverflow.com/questions/10873942/document-write-clears-page). This is because `document.write()` will call `document.open()` on an already loaded document [(see notes section here)](https://developer.mozilla.org/en-US/docs/Web/API/Document/write), which clears the contents that were written previously.
 
 Most developers avoid using `document.write` for this exact reason, however in this age of third party ads and addons, you never know when someone's irresponsible use of `document.write` is going to bite you.
 
@@ -29,7 +29,7 @@ export default DocumentService.extend({
     },
     write(/* content */) {
         // insert any functionality to be executed when document.write is called
-        // you can log, report, or use a "safe" write option like `Node.insertBefore`
+        // you can log, report, or use a "safe" write option like `Node.insertBefore` or `document.appendChild`
     }
 });
 ```
@@ -51,9 +51,10 @@ This README outlines the details of collaborating on this Ember addon.
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+* `npm test` (Runs `ember try:each && npm run nodetest` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
+* `npm run nodetest`
 
 ## Building
 
