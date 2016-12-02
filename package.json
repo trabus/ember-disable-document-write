@@ -1,6 +1,6 @@
 {
   "name": "ember-disable-document-write",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Disables or reassigns document.write to prevent a blank page.",
   "directories": {
     "doc": "doc",
