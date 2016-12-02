@@ -5,7 +5,9 @@ export default Ember.Service.extend({
     init() {
         this._super(...arguments);
         let document = get(this, 'document');
-        document.write = get(this, 'write').bind(this);
+        if (document) {
+            document.write = get(this, 'write').bind(this);
+        }
     },
     document: computed({
         get() {
