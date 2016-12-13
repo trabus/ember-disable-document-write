@@ -12,7 +12,7 @@
     "test": "ember try:each && npm run nodetest",
     "nodetest": "mocha node-tests --recursive"
   },
-  "repository": "",
+  "repository": "https://github.com/trabus/ember-disable-document-write",
   "engines": {
     "node": ">= 0.10.0"
   },
